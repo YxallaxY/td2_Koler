@@ -8,9 +8,16 @@ class Identite {
         this.nom = nom;
         this.prenom = prenom;
     }
+
+    public String getNip() {
+        return nip;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
 }
-
-
-
-
-

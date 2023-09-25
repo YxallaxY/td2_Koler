@@ -1,12 +1,12 @@
 import java.util.HashMap;
 import java.util.Map;
 
-class Etudient {
+class Etudiant {
     private Identite identite;
     private Formation formation;
     private Map<String, Double> notes; // Utilisation d'une Map pour stocker les notes par matière
 
-    public Etudient(Identite identite, Formation formation) {
+    public Etudiant(Identite identite, Formation formation) {
         this.identite = identite;
         this.formation = formation;
         this.notes = new HashMap<>();
@@ -46,5 +46,9 @@ class Etudient {
 
     public Formation getFormation(){
         return this.formation;
+    }
+
+    public Map<String, Double> getNotes() {
+        return notes;
     }
 }

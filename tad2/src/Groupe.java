@@ -4,7 +4,7 @@ import java.util.List;
 public class Groupe {
     private String nom;
     private Formation formation;
-    private List<Etudient> etudiants;
+    private List<Etudiant> etudiants;
 
     public Groupe(String nom, Formation formation) {
         this.nom = nom;
@@ -16,11 +16,11 @@ public class Groupe {
         return nom;
     }
 
-    public List<Etudient> getEtudiants() {
+    public List<Etudiant> getEtudiants() {
         return etudiants;
     }
 
-    public void ajouterEtudiant(Etudient etudiant) {
+    public void ajouterEtudiant(Etudiant etudiant) {
         if (etudiant.getFormation().equals(this.formation)) {
             etudiants.add(etudiant);
         } else {
@@ -28,7 +28,7 @@ public class Groupe {
         }
     }
 
-    public void supprimerEtudiant(Etudient etudiant) {
+    public void supprimerEtudiant(Etudiant etudiant) {
         etudiants.remove(etudiant);
     }
 }

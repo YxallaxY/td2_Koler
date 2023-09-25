@@ -31,6 +31,9 @@ class Formation {
         }
     }
 
+    public String getIdentifiant() {
+        return identifiant;
+    }
 
     public Set<String> getMatieres() {
         return matieres.keySet();
