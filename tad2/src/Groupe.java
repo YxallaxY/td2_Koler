@@ -31,4 +31,30 @@ public class Groupe {
     public void supprimerEtudiant(Etudiant etudiant) {
         etudiants.remove(etudiant);
     }
+
+    public double calculerMoyenneMatiere(String matiere) {
+        double somme = 0;
+        int count = 0;
+        for (Etudiant etudiant : etudiants) {
+            if (etudiant.getNotes().containsKey(matiere)) {
+                somme += etudiant.getNotes().get(matiere);
+                count++;
+            }
+        }
+        return (count > 0) ? somme / count : 0.0;
+    }
+
+    public double calculerMoyenneGenerale() {
+        double somme = 0;
+        int count = 0;
+        for (Etudiant etudiant : etudiants) {
+            double moyenneEtudiant = etudiant.calculerMoyenneGenerale();
+            if (moyenneEtudiant > 0) {
+                somme += moyenneEtudiant;
+                count++;
+            }
+        }
+        return (count > 0) ? somme / count : 0.0;
+    }
+
 }
