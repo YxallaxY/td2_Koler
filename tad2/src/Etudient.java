@@ -51,4 +51,8 @@ class Etudiant {
     public Map<String, Double> getNotes() {
         return notes;
     }
+
+    public Identite getIdentite() {
+        return identite;
+    }
 }

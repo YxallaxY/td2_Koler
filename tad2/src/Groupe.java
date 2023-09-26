@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Groupe {
@@ -55,6 +57,24 @@ public class Groupe {
             }
         }
         return (count > 0) ? somme / count : 0.0;
+    }
+
+    public void triAlpha() {
+        Collections.sort(etudiants, new Comparator<Etudiant>() {
+            @Override
+            public int compare(Etudiant etudiant1, Etudiant etudiant2) {
+                return etudiant1.getIdentite().getNom().compareTo(etudiant2.getIdentite().getNom());
+            }
+        });
+    }
+
+    public void triAntiAlpha() {
+        Collections.sort(etudiants, new Comparator<Etudiant>() {
+            @Override
+            public int compare(Etudiant etudiant1, Etudiant etudiant2) {
+                return etudiant2.getIdentite().getNom().compareTo(etudiant1.getIdentite().getNom());
+            }
+        });
     }
 
 }
