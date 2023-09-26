@@ -34,4 +34,8 @@ public class Formation {
     public Set<String> getMatieres() {
         return matieres.keySet();
     }
+
+    public String getIdentifiant() {
+        return identifiant;
+    }
 }
