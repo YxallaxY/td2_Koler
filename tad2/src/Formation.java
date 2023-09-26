@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-class Formation {
+public class Formation {
     private String identifiant;
     private Map<String, Integer> matieres; // Stocker les matières avec leurs coefficients
 
@@ -29,10 +29,6 @@ class Formation {
         } else {
             throw new IllegalArgumentException("Matière non trouvée dans la formation.");
         }
-    }
-
-    public String getIdentifiant() {
-        return identifiant;
     }
 
     public Set<String> getMatieres() {

@@ -40,7 +40,7 @@ public class Groupe {
         for (Etudiant etudiant : etudiants) {
             if (etudiant.getNotes().containsKey(matiere)) {
                 somme += etudiant.getNotes().get(matiere);
-                count++;
+                count+=1;
             }
         }
         return (count > 0) ? somme / count : 0.0;
@@ -73,6 +73,19 @@ public class Groupe {
             @Override
             public int compare(Etudiant etudiant1, Etudiant etudiant2) {
                 return etudiant2.getIdentite().getNom().compareTo(etudiant1.getIdentite().getNom());
+            }
+        });
+    }
+
+    public void triParMerite() {
+        Collections.sort(etudiants, new Comparator<Etudiant>() {
+            @Override
+            public int compare(Etudiant etudiant1, Etudiant etudiant2) {
+                double moyenne1 = etudiant1.calculerMoyenneGenerale();
+                double moyenne2 = etudiant2.calculerMoyenneGenerale();
+
+                // Trie par ordre décroissant (du meilleur au moins bon)
+                return Double.compare(moyenne2, moyenne1);
             }
         });
     }

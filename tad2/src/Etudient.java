@@ -25,7 +25,7 @@ class Etudiant {
             return notes.get(matiere);
         } else {
             System.out.println("Erreur : Matière non trouvée");
-            return 0.0; // Vous pouvez choisir de renvoyer une valeur par défaut ici
+            return 0.0;
         }
     }
 
@@ -39,7 +39,7 @@ class Etudiant {
             }
         }
         if (totalCoefficients == 0) {
-            return 0.0; // Éviter la division par zéro
+            return 0.0;
         }
         return totalPoints / totalCoefficients;
     }
