@@ -41,7 +41,7 @@ class Etudiant {
         if (totalCoefficients == 0) {
             return 0.0;
         }
-        return totalPoints / totalCoefficients;
+        return Math.round((totalPoints / totalCoefficients)*100.0)/100.0;
     }
 
     public Formation getFormation(){

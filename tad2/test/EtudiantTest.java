@@ -32,7 +32,7 @@ public class EtudiantTest {
         etudiant.ajouterNote("Mathématiques", 15.5);
         etudiant.ajouterNote("Informatique", 18.0);
         double moyenneGenerale = etudiant.calculerMoyenneGenerale();
-        assertEquals(16.9, moyenneGenerale, 0.01); // Utilisation d'une tolérance de 0.01 pour la comparaison des doubles
+        assertEquals(16.93, moyenneGenerale, 0.01); // Utilisation d'une tolérance de 0.01 pour la comparaison des doubles
     }
 
     @Test

@@ -35,29 +35,44 @@ public class Groupe {
     }
 
     public double calculerMoyenneMatiere(String matiere) {
-        double somme = 0;
+        double moy = 0;
         int count = 0;
         for (Etudiant etudiant : etudiants) {
             if (etudiant.getNotes().containsKey(matiere)) {
-                somme += etudiant.getNotes().get(matiere);
-                count+=1;
+                moy += etudiant.getNotes().get(matiere);
+                count += 1;
             }
         }
-        return (count > 0) ? somme / count : 0.0;
+        if (count > 0) {
+            moy = moy / count;
+        } else {
+            moy = 0.0;
+        }
+        // Arrondir à deux décimales
+        moy = Math.round(moy * 100.0) / 100.0;
+        return moy;
     }
 
     public double calculerMoyenneGenerale() {
-        double somme = 0;
+        double moy = 0;
         int count = 0;
         for (Etudiant etudiant : etudiants) {
             double moyenneEtudiant = etudiant.calculerMoyenneGenerale();
             if (moyenneEtudiant > 0) {
-                somme += moyenneEtudiant;
+                moy += moyenneEtudiant;
                 count++;
             }
         }
-        return (count > 0) ? somme / count : 0.0;
+        if (count > 0) {
+            moy = moy / count;
+            // Arrondir à deux décimales
+            moy = Math.round(moy * 100.0) / 100.0;
+        } else {
+            moy = 0.0;
+        }
+        return moy;
     }
+
 
     public void triAlpha() {
         Collections.sort(etudiants, new Comparator<Etudiant>() {
